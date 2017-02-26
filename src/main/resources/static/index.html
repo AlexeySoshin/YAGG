@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Yet Another D3 Graph</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+    <style>
+        #content {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color:#222222;
+        }
+    </style>
+    <script>
+        const colors = Object.freeze(['BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue', 'Chocolate', 'Coral', 'CornflowerBlue', 'Crimson', 'DarkCyan', 'DarkGoldenRod']);
+        $(function(){
+
+            function getStyle() {
+                function nodeStyles(stylesheet) {
+                    stylesheet.selector('node')
+                            .css({
+                                'shape': 'data(faveShape)',
+                                'width': 'mapData(weight, 40, 80, 20, 60)',
+                                'content': 'data(content)',
+                                'text-valign': 'center',
+                                'text-outline-width': 2,
+                                'text-outline-color': 'data(color)',
+                                'background-color': 'data(color)',
+                                'color': '#fff'
+                            })
+                }
+
+                function edgeStyles(stylesheet) {
+                    stylesheet.selector('edge')
+                            .css({
+                                'curve-style': 'bezier',
+                                'opacity': 0.7,
+                                'content': 'data(content)',
+                                'width': 'mapData(strength, 70, 100, 2, 6)',
+                                'target-arrow-shape': 'triangle',
+                                //  'source-arrow-shape': 'circle',
+                                'line-color': 'data(color)',
+                                'color': '#fff',
+                                'source-arrow-color': 'data(color)',
+                                'target-arrow-color': 'data(color)'
+                            })
+                }
+                var stylesheet = cytoscape.stylesheet();
+
+                nodeStyles(stylesheet);
+                edgeStyles(stylesheet);
+                return stylesheet
+                        .selector(':selected')
+                        .css({
+                            'border-width': 3,
+                            'border-color': '#333'
+                        })
+            }
+
+            function getElements(graph) {
+
+                var nodes = graph.nodes;
+
+                var edges = graph.edges;
+
+                if (nodes) {
+                    var displayedNodes = nodes.map(function(n, i) {
+                        // Mutate nodes to preserve styles for edges
+                        n['faveShape'] = 'ellipse';
+                        n['weight'] = 50;
+                        n['color'] = colors[i];
+                        return {data: n}
+                    });
+                }
+
+
+                if (edges) {
+                    var displayedEdges = edges.map(function(e) {
+                        var sourceNode = nodes.find(function(n) {
+                            return n.id === e.source
+                        });
+                        e['strength'] = 50;
+                        e['color'] = sourceNode['color'];
+                        return {data: e}
+                    });
+                }
+
+
+                return {
+                    nodes: displayedNodes || [],
+                    edges: displayedEdges || []
+                }
+            }
+
+
+            fetch("/graph").then(function (response) {
+                return response.json().then(function (j) {
+                    return j
+                })
+            }).then(function (graph) {
+                $('#content').cytoscape({
+                    layout: {
+                        name: 'cose',
+                        randomize: true
+                    },
+
+                    style: getStyle(),
+                    elements: getElements(graph)
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div id="content">
+
+    </div>
+</div>
+</body>
+</html>
