@@ -2,7 +2,7 @@ package me.soshin.fetcher;
 
 import me.soshin.model.Graph;
 
-public interface Fetcher {
+public abstract class Fetcher {
 
-    Graph fetch();
+    public abstract Graph fetch();
 }

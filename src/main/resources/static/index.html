@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<ZZ></ZZ><!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Yet Another D3 Graph</title>
+    <title>Yet Another Github Graph</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -22,7 +22,8 @@
         }
     </style>
     <script>
-        const colors = Object.freeze(['BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue', 'Chocolate', 'Coral', 'CornflowerBlue', 'Crimson', 'DarkCyan', 'DarkGoldenRod']);
+        const colors = Object.freeze(['BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue', 'Chocolate', 'Coral', 'CornflowerBlue', 'Crimson', 'DarkCyan', 'DarkGoldenRod', 'DarkMagenta',
+            'DarkOliveGreen', 'DarkOrange', 'DarkOrchid', 'DarkRed', 'DarkSalmon', 'DarkSlateBlue', 'DeepPink']);
         $(function(){
 
             function getStyle() {
@@ -78,7 +79,7 @@
                         // Mutate nodes to preserve styles for edges
                         n['faveShape'] = 'ellipse';
                         n['weight'] = 50;
-                        n['color'] = colors[i];
+                        n['color'] = colors[i%colors.length];
                         return {data: n}
                     });
                 }
@@ -108,10 +109,29 @@
                     return j
                 })
             }).then(function (graph) {
+
+                function gridLayout() {
+                    var grid = Math.floor(Math.sqrt(graph.nodes.length));
+
+                    return {
+                        name: 'grid',
+                        rows: grid ,
+                        cols: grid
+                    }
+                }
+
+
                 $('#content').cytoscape({
                     layout: {
-                        name: 'cose',
-                        randomize: true
+                        name: 'concentric',
+                        concentric: function( node ){
+
+                            return node.degree();
+                        },
+                        levelWidth: function(nodes) {
+                            return 42;
+                        },
+                        fit:false
                     },
 
                     style: getStyle(),

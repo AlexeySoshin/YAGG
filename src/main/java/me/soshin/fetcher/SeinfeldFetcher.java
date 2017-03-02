@@ -12,8 +12,8 @@ import java.util.List;
 /**
  * Static fetcher that returns an example graph based on Seinfeld characters
  */
-@Component
-public class SeinfeldFetcher implements Fetcher {
+@Component("example")
+public class SeinfeldFetcher extends Fetcher {
     public Graph fetch() {
         final List<Node> nodes = new ArrayList<>(Arrays.asList(new Node("j", "Jerry"), new Node("e", "Elaine"), new Node("k", "Kramer"), new Node("g", "George")));
         final List<Edge> edges = new ArrayList<>(Arrays.asList(
