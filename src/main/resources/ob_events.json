@@ -1,0 +1,398 @@
+{
+  "services": {
+    "3cae8fe8": {
+      "publish": [
+        "1709d44e",
+        "4d55b21d"
+      ],
+      "subscribe": [
+        {
+          "type": "d1b9c441"
+        }
+      ]
+    },
+    "015fd7cc": {
+      "publish": [],
+      "subscribe": [
+        "97b6db7d"
+      ]
+    },
+    "f50c61ac": {
+      "publish": [
+        "649e40f8",
+        "9eb1cc64"
+      ],
+      "subscribe": [
+        {
+          "type": "cbacaf45"
+        }
+      ]
+    },
+    "f7d027ad": {
+      "publish": [
+        "971e8394",
+        "9403954b",
+        "97b6db7d"
+      ],
+      "subscribe": []
+    },
+    "489ebc20": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "publish_to_pubnub"
+        }
+      ]
+    },
+    "1551dad5": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "2dfbbb68"
+        }
+      ]
+    },
+    "29470f46": {
+      "publish": [
+        "631ddf90",
+        "698be307",
+        "5d37c66c"
+      ],
+      "subscribe": [
+        {
+          "type": "cfca1bcd"
+        },
+        {
+          "type": "4810b981"
+        },
+        {
+          "type": "cf8d2d44"
+        },
+        {
+          "type": "c2079c35"
+        },
+        {
+          "type": "17137503"
+        }
+      ]
+    },
+    "8abb0dd2": {
+      "publish": [
+        "fd34d2a7"
+      ],
+      "subscribe": [
+        {
+          "type": "ddc3096d"
+        },
+        {
+          "type": "148fccf8"
+        },
+        {
+          "type": "a2305936"
+        }
+      ]
+    },
+    "47ac5ca0": {
+      "publish": [
+        "a2fbc530",
+        "f94b861e",
+        "ad0847e5",
+        "8811980b",
+        "8fa54c01",
+        "c4e4a4a0"
+      ],
+      "subscribe": [
+        {
+          "type": "depot_evict"
+        },
+        {
+          "type": "a27b2491"
+        },
+        {
+          "type": "6ec15fd3"
+        },
+        {
+          "type": "02b87b5f"
+        },
+        {
+          "type": "29a66067"
+        },
+        {
+          "type": "3e324dd9"
+        },
+        {
+          "type": "31aec9af"
+        },
+        {
+          "type": "ce0ec4b9"
+        },
+        {
+          "type": "351f4c0e"
+        },
+        {
+          "type": "6782862b"
+        },
+        {
+          "type": "28d134a8"
+        },
+        {
+          "type": "fcf7bd21"
+        },
+        {
+          "type": "e5bcdbeb"
+        }
+      ]
+    },
+    "a25b8536": {
+      "publish": [
+        "00c5f34d",
+        "a00145a3",
+        "0920af53",
+        "18829032",
+        "00694ba8",
+        "cfca1bcd",
+        "4810b981"
+      ],
+      "subscribe": [
+        {
+          "type": "7849a793"
+        },
+        {
+          "type": "939e1e41"
+        },
+        {
+          "type": "ec2a99c1"
+        },
+        {
+          "type": "01c4550c"
+        },
+        {
+          "type": "1187b965"
+        },
+        {
+          "type": "a57b6472"
+        },
+        {
+          "type": "bf9ea3b9"
+        }
+      ]
+    },
+    "51a6c041": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "4e308545"
+        }
+      ]
+    },
+    "5f0dd203": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "cee47b47"
+        }
+      ]
+    },
+    "cf86ff43": {
+      "publish": [
+        "a27b2491"
+      ],
+      "subscribe": []
+    },
+    "49fcad78": {
+      "publish": [],
+      "subscribe": [
+        "f13de6ac",
+        "fd90e5aa"
+      ]
+    },
+    "cad3f398": {
+      "publish": [
+        "2d8351e0"
+      ],
+      "subscribe": [
+        {
+          "type": "8fa54c01"
+        },
+        {
+          "type": "c4e4a4a0"
+        },
+        {
+          "type": "02b87b5f"
+        },
+        {
+          "type": "29a66067"
+        },
+        {
+          "type": "fcf7bd21"
+        }
+      ]
+    },
+    "3e4684ea": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "e2f93617"
+        }
+      ]
+    },
+    "642d676c": {
+      "publish": [],
+      "subscribe": []
+    },
+    "631f402d": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "ef4fba4c"
+        }
+      ]
+    },
+    "e6dfe988": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "f13de6ac"
+        },
+        {
+          "type": "605c7a42"
+        }
+      ]
+    },
+    "2b32c511": {
+      "publish": [],
+      "subscribe": [
+        "d72cfe25"
+      ]
+    },
+    "393c47f2": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "971e8394"
+        },
+        {
+          "type": "fb91cdd4"
+        }
+      ]
+    },
+    "5e3da25a": {
+      "publish": [
+        "2402d936",
+        "6ec15fd3"
+      ],
+      "subscribe": [
+        {
+          "type": "971e8394"
+        }
+      ]
+    },
+    "de1df244": {
+      "publish": [
+        "7849a793",
+        "939e1e41",
+        "ec2a99c1",
+        "cf8d2d44",
+        "c2079c35",
+        "17137503",
+        "01c4550c",
+        "f13de6ac",
+        "fd90e5aa",
+        "d72cfe25",
+        "ef4fba4c",
+        "1187b965",
+        "2dfbbb68",
+        "fb91cdd4",
+        "a57b6472",
+        "bf9ea3b9",
+        "605c7a42",
+        "cbacaf45",
+        "d1b9c441",
+        "02b87b5f",
+        "29a66067",
+        "3e324dd9",
+        "31aec9af",
+        "ce0ec4b9",
+        "351f4c0e",
+        "6782862b",
+        "e2f93617",
+        "28d134a8",
+        "cee47b47",
+        "fcf7bd21",
+        "e5bcdbeb",
+        "4e308545",
+        "3d802ecd",
+        "ddc3096d",
+        "148fccf8",
+        "a2305936"
+      ],
+      "subscribe": [
+        {
+          "type": "1709d44e"
+        },
+        {
+          "type": "4d55b21d"
+        },
+        {
+          "type": "649e40f8"
+        },
+        {
+          "type": "9eb1cc64"
+        },
+        {
+          "type": "971e8394"
+        },
+        {
+          "type": "fd34d2a7"
+        },
+        {
+          "type": "a2fbc530"
+        },
+        {
+          "type": "f94b861e"
+        },
+        {
+          "type": "ad0847e5"
+        },
+        {
+          "type": "8811980b"
+        },
+        {
+          "type": "00c5f34d"
+        },
+        {
+          "type": "a00145a3"
+        },
+        {
+          "type": "0920af53"
+        },
+        {
+          "type": "18829032"
+        },
+        {
+          "type": "00694ba8"
+        },
+        {
+          "type": "2d8351e0"
+        }
+      ]
+    },
+    "4c852201": {
+      "publish": [],
+      "subscribe": [
+        {
+          "type": "971e8394"
+        }
+      ]
+    },
+    "08ab9631": {
+      "publish": [],
+      "subscribe": [
+        "971e8394",
+        "9403954b",
+        "2402d936",
+        "4e308545"
+      ]
+    }
+  }
+}

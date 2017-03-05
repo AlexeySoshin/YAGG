@@ -6,6 +6,11 @@ Using:
 * [CytoscapeJS](http://js.cytoscape.org/) for presentation
 * [SpringBoot](https://projects.spring.io/spring-boot/) for serving data
 
+## Example results
+From [single file](example/datga/ob_events.json) :
+
+![Events graph](readme/events.png)
+
 
 ## Installation
 

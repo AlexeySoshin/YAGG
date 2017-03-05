@@ -22,7 +22,7 @@ public class GitHubFetcher extends Fetcher {
 
     private final Gson gson = new GsonBuilder().create();
 
-    @Value(value = "classpath:events.json")
+    @Value(value = "classpath:ob_events.json")
     private Resource eventsResource;
 
     @Override
@@ -55,15 +55,15 @@ public class GitHubFetcher extends Fetcher {
      * @param e
      */
     private void addEdges(final Graph g, final Events e) {
-        final Map<String, List<String>> subsribedServices = getSubscribedServices(e);
+        final Map<String, List<String>> subscribedServices = getSubscribedServices(e);
 
         for (final String serviceName : e.services.keySet()) {
             final Events.Service service = e.services.get(serviceName);
             for (final String eventName : service.publish) {
-                final List<String> subscribedServices = subsribedServices.getOrDefault(eventName, Collections.emptyList());
+                final List<String> servicesForEvent = subscribedServices.getOrDefault(eventName, Collections.emptyList());
 
-                for (final String subscribedService : subscribedServices) {
-                    g.add(new Edge(serviceName, subscribedService, ""));
+                for (final String subscribedService : servicesForEvent) {
+                    g.add(new Edge(serviceName, subscribedService, eventName));
                 }
             }
         }
@@ -116,13 +116,13 @@ public class GitHubFetcher extends Fetcher {
         return eventName;
     }
 
-    class Events {
+    public class Events {
 
-        Map<String, Service> services;
+        public Map<String, Service> services;
 
-        class Service {
-            List<String> publish;
-            List<JsonElement> subscribe;
+        public class Service {
+            public List<String> publish;
+            public List<JsonElement> subscribe;
 
         }
 
