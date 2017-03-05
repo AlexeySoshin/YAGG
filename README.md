@@ -19,7 +19,7 @@ From [single file](example/datga/ob_events.json) :
 ```
 
 ## Development
-This project uses SpringBoot DevTools
+This project uses SpringBoot DevTools<br />
 If you'r using JetBrains IDE, remember to set
 `compiler.automake.allow.when.app.running=true` in the Registry and `Make project automatically` in the Compiler settings
 
