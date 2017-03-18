@@ -23,3 +23,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+src/main/java/me/soshin/Scrambler.java
+
+src/main/resources/events.json
