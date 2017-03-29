@@ -26,3 +26,9 @@ nbdist/
 src/main/java/me/soshin/Scrambler.java
 
 src/main/resources/events.json
+
+src/main/.DS_Store
+
+src/main/java/me/.DS_Store
+
+src/main/resources/.DS_Store

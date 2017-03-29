@@ -22,7 +22,7 @@ public class GitHubFetcher extends Fetcher {
 
     private final Gson gson = new GsonBuilder().create();
 
-    @Value(value = "classpath:ob_events.json")
+    @Value(value = "classpath:events.json")
     private Resource eventsResource;
 
     @Override

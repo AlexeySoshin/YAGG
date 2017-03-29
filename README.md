@@ -15,7 +15,13 @@ From [single file](example/datga/ob_events.json) :
 ## Installation
 
 ```
-./gradlew build
+./gradlew bootRun
+```
+
+
+## Docker
+```
+docker build -t yagg . && docker run -p 8080:8080 -t yagg
 ```
 
 ## Development
