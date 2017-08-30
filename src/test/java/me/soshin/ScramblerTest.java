@@ -18,7 +18,7 @@ public class ScramblerTest {
 
         final Scrambler s = new Scrambler();
 
-        final GitHubFetcher.Events events = s.doYourJob("./src/test/resources/events.json");
+        final GitHubFetcher.Events events = s.doYourJob("./src/test/resources/ob_events.json");
 
         for (final GitHubFetcher.Events.Service service : events.services.values()) {
 
