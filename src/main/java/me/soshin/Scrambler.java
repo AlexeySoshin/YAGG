@@ -20,7 +20,7 @@ public class Scrambler {
 
         final Scrambler s = new Scrambler();
 
-        final GitHubFetcher.Events events = s.doYourJob("./example/data/events.json");
+        final GitHubFetcher.Events events = s.doYourJob("./example/data/ob_events.json");
 
         try (Writer w = new OutputStreamWriter(new FileOutputStream("./example/data/ob_events.json"))) {
             gson.toJson(events, w);
