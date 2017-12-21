@@ -130,7 +130,8 @@ $(function () {
           return nodes.maxDegree() * 10;
         },
         minNodeSpacing: 100,
-        fit:            false
+        fit:            false,
+        avoidOverlap:   true
       },
 
       style:    getStyle(),
@@ -139,11 +140,12 @@ $(function () {
 
     cy.on("click", "node", function (n) {
 
-      var selectedNode = n.cyTarget;
+      console.log("Selected")
+      var selectedNode = n.target;
       if (!selectedNode.hasClass('selected')) {
         selectedNode.addClass('selected');
         cy.edges().removeClass('selected').addClass('discolored');
-        n.cyTarget.connectedEdges().removeClass('discolored').addClass('selected');
+        n.target.connectedEdges().removeClass('discolored').addClass('selected');
       }
       else {
         selectedNode.removeClass('selected');
