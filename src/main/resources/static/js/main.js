@@ -121,15 +121,16 @@ $(function () {
     var cy = cytoscape({
       container: $('#content'),
       layout:    {
-        name:       'concentric',
-        concentric: function (node) {
-
-          return node.degree();
+        name:           'concentric',
+        // This decides how far away the node will be, based on how many outbound connections it has
+        concentric:     function (node) {
+          return node.degree() * 100;
         },
-        levelWidth: function (nodes) {
-          return 42;
+        levelWidth:     function (nodes) {
+          return nodes.maxDegree() * 10;
         },
-        fit:        false
+        minNodeSpacing: 100,
+        fit:            false
       },
 
       style:    getStyle(),
